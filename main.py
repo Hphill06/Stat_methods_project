@@ -13,7 +13,7 @@ means = round(df.groupby("Primary Typing")["Base Stat Total"].mean().sort_values
 
 summary_table = pd.DataFrame({
     "Mean BST": round(means, 2),
-    "Std Dev": round(variances, 2)
+    "Var": round(variances, 2)
 })
 
 print(summary_table)
