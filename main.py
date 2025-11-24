@@ -12,8 +12,8 @@ variances = round(df.groupby("Primary Typing")["Base Stat Total"].std(ddof=1).so
 means = round(df.groupby("Primary Typing")["Base Stat Total"].mean().sort_values(ascending=False),2)
 
 summary_table = pd.DataFrame({
-    "Mean BST": round(means, 2),
-    "Var": round(variances, 2)
+    "Mean BST": means,
+    "Var": variances
 })
 
 print(summary_table)
