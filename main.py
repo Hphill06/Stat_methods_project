@@ -9,9 +9,14 @@ df = pd.read_csv("all_pokemon_data.csv")
 print("*** Variances ***")
 
 variances = round(df.groupby("Primary Typing")["Base Stat Total"].std(ddof=1).sort_values(ascending=False),2)
+means = round(df.groupby("Primary Typing")["Base Stat Total"].mean().sort_values(ascending=False),2)
 
-print(variances)  
+summary_table = pd.DataFrame({
+    "Mean BST": round(means, 2),
+    "Std Dev": round(variances, 2)
+})
 
+print(summary_table)
 
 top = variances.index[0]
 
